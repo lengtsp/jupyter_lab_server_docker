@@ -1,10 +1,8 @@
-นี่คือไฟล์ `README.md` ที่จัดรูปแบบเรียบร้อยพร้อมแสดงรูป `test.jpg`:
-
-```markdown
 # Jupyter Lab Server with Docker
 
-![Image1](page1.jpg)
-![Image2](page2.jpg)
+<!-- ตรวจสอบให้แน่ใจว่ารูปภาพอยู่ในโฟลเดอร์เดียวกับ README.md -->
+<img src="./page1.jpg" alt="Image1" />
+<img src="./page2.jpg" alt="Image2" />
 
 ## อ่านเพิ่มเติม
 [อ่านบทความเพิ่มเติมที่นี่](https://medium.com/p/0059745f7df5/edit)
@@ -45,4 +43,3 @@
   ```bash
   sudo docker-compose down
   ```
-```
