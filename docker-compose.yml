@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  jupyter:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: miniconda_jupyter:7701  # Added specific image tag
+    container_name: miniconda_jupyter7701
+    volumes:
+      - /data/miniconda_docker7701:/opt/notebooks
+      - /data/miniconda_docker7701/conda_pkgs:/opt/conda/pkgs
+      - /data/huggingface/llm/bge-m3:/data/huggingface/llm/bge-m3
+    ports:
+      - "7701:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1  # Changed from 'all' to specific count
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "sh", "-c", "for pid in $$(pgrep python); do if [ $$(ps -o etimes= -p $$pid) -gt 60 ]; then kill -9 $$pid && echo Killed process $$pid running over 1 minute; fi; done"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
