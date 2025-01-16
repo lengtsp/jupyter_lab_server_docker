@@ -1,9 +1,5 @@
 # Jupyter Lab Server with Docker
 
-<!-- ตรวจสอบให้แน่ใจว่ารูปภาพอยู่ในโฟลเดอร์เดียวกับ README.md -->
-<img src="./page1.jpg" alt="Image1" />
-<img src="./page2.jpg" alt="Image2" />
-
 ## อ่านเพิ่มเติม
 [อ่านบทความเพิ่มเติมที่นี่](https://medium.com/p/0059745f7df5/edit)
 
@@ -16,7 +12,7 @@
    cd "/data/miniconda_docker7705"
    ```
 
-2. เรียกใช้งาน Docker Compose:
+2. เรียกใช้งาน Docker Compose: (ตั้งเวลา kernel ที่ 60 วินาที แล้วจะ kill แต่ยังมีปัญหา ตีกันกับ ollama อยู่)
    ```bash
    sudo docker-compose up -d
    ```
@@ -36,6 +32,12 @@
   ```
 
 ---
+
+
+
+<!-- ตรวจสอบให้แน่ใจว่ารูปภาพอยู่ในโฟลเดอร์เดียวกับ README.md -->
+<img src="./page1.jpg" alt="Image1" />
+<img src="./page2.jpg" alt="Image2" />
 
 ## วิธีการหยุดเซิร์ฟเวอร์
 
