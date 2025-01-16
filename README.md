@@ -3,7 +3,8 @@
 ```markdown
 # Jupyter Lab Server with Docker
 
-![Test Image](test.jpg)
+![Image1](page1.jpg)
+![Image2](page2.jpg)
 
 ## อ่านเพิ่มเติม
 [อ่านบทความเพิ่มเติมที่นี่](https://medium.com/p/0059745f7df5/edit)
