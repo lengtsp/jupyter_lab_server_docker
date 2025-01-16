@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-runtime-ubuntu20.04
+FROM nvidia/cuda:11.8.0-base-ubuntu22.04
 
 # Install basic utilities
 RUN apt-get update && apt-get install -y \
@@ -46,7 +46,8 @@ RUN conda create -n test1 python=3.9 ipykernel -y \
 # Create workspace directory with proper permissions
 RUN mkdir -p /opt/notebooks && \
     mkdir -p /opt/notebooks/code && \
-    chmod -R 777 /opt/notebooks
+    chmod -R 777 /opt/notebooks && \
+    chmod -R 777 /opt/notebooks/code
 
 WORKDIR /opt/notebooks
 
@@ -54,4 +55,4 @@ WORKDIR /opt/notebooks
 ENV JUPYTER_NOTEBOOK_DIR=/opt/notebooks/code
 
 # Default command with updated notebook directory reference
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=mypassword", "--IdentityProvider.token=mypassword"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=650290", "--IdentityProvider.token=650290"]
