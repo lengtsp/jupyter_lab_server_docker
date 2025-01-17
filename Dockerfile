@@ -55,4 +55,4 @@ WORKDIR /opt/notebooks
 ENV JUPYTER_NOTEBOOK_DIR=/opt/notebooks/code
 
 # Default command with updated notebook directory reference
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=650290", "--IdentityProvider.token=650290"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=mypassword", "--IdentityProvider.token=mypassword"]
